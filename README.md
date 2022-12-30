@@ -12,7 +12,7 @@ python から Rust製巡回セールスマン問題ソルバ を呼び出すサ�
 
 1. `poetry run python setup.py install` を実行して python向けRustモジュールをビルドする
 
-1. `notebook/sample.ipynb` を順に実行して、エラーが出なければOK.成功すれば計算結果が表示される
+1. `notebook/sample.ipynb` を開き、セルを順に実行して、エラーが出なければOK.成功すれば計算結果が表示される
 
 
 # 開発用コマンド呼び出し方(メモ)
