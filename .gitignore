@@ -1,0 +1,11 @@
+# Rust part
+/target
+*.egg-info/
+
+
+# python part
+.python-version
+.ipynb_checkpoints/
+__pycache__/
+build/
+.venv/
