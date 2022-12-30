@@ -1,22 +1,19 @@
 use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
 
+mod tsp_solver;
+use tsp_solver::solve;
+
 #[pyfunction]
-fn cumulate(n: Vec<i32>) -> PyResult<Vec<i32>> {
-    let mut cum_n: Vec<i32> = vec![0;n.len()];
-    let mut c: i32 = 0;
-    for i in 0..n.len() {
-        c += n[i];
-        cum_n[i] = c;
-    }
-    Ok(cum_n)
+fn solve_tsp(cost_matrix: Vec<Vec<f64>>) -> PyResult<f64> {
+    let answer = solve(&cost_matrix);
+    Ok(answer)
 }
 
 // ======================CREATING MODULE FOR PYTHON==================================================
 /// This module is a python module implemented in Rust.
 #[pymodule]
-fn test_library(py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_wrapped(wrap_pyfunction!(cumulate))?;
-
+fn travel_salesman_problem(py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(solve_tsp))?;
     Ok(())
 }

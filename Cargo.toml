@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-name = "test_library"
+name = "travel_salesman_problem"
 crate-type = ["cdylib"]
 
 [dependencies]
